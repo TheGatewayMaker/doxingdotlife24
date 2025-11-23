@@ -11,6 +11,14 @@ export default function Header() {
   useEffect(() => {
     const token = localStorage.getItem("auth_token");
     setIsAuthenticated(!!token);
+
+    const handleStorageChange = () => {
+      const updatedToken = localStorage.getItem("auth_token");
+      setIsAuthenticated(!!updatedToken);
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+    return () => window.removeEventListener("storage", handleStorageChange);
   }, []);
 
   const closeSidebar = () => setIsSidebarOpen(false);
