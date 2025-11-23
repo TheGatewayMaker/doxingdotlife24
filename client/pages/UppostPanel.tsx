@@ -75,6 +75,8 @@ export default function UppostPanel() {
         return;
       }
 
+      localStorage.setItem("auth_token", data.token);
+      localStorage.setItem("auth_username", loginUsername);
       setAuth({
         isAuthenticated: true,
         username: loginUsername,
