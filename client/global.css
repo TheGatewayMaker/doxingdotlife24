@@ -101,8 +101,9 @@
 }
 
 html {
-  background-color: hsl(var(--background));
+  background: linear-gradient(135deg, #0f0e17 0%, #1a1826 50%, #0f0e17 100%);
   color: hsl(var(--foreground));
+  min-height: 100vh;
 }
 
 @layer base {
@@ -111,7 +112,9 @@ html {
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    background: linear-gradient(135deg, #0f0e17 0%, #1a1826 50%, #0f0e17 100%);
+    min-height: 100vh;
   }
 
   h1,
