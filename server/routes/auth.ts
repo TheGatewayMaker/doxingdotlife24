@@ -34,14 +34,16 @@ export const handleLogin: RequestHandler = async (req, res) => {
     if (!validUsername || !validPassword) {
       console.error(
         "Admin credentials not configured in environment variables. Available env keys:",
-        Object.keys(process.env).filter(k => k.includes("ADMIN") || k.includes("R2")).join(", ")
+        Object.keys(process.env)
+          .filter((k) => k.includes("ADMIN") || k.includes("R2"))
+          .join(", "),
       );
       res.status(500).json({
         error: "Server configuration error",
         debug: {
           hasUsername: !!validUsername,
-          hasPassword: !!validPassword
-        }
+          hasPassword: !!validPassword,
+        },
       });
       return;
     }
