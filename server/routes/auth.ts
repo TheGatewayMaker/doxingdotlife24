@@ -28,13 +28,23 @@ export const handleLogin: RequestHandler = async (req, res) => {
     console.log("Login request received. Body:", JSON.stringify(req.body));
     const { username, password } = req.body as AuthRequest;
 
-    console.log("Extracted username:", username, "password:", password ? "***" : "undefined");
+    console.log(
+      "Extracted username:",
+      username,
+      "password:",
+      password ? "***" : "undefined",
+    );
 
     // Get credentials from environment variables
     const validUsername = process.env.ADMIN_USERNAME;
     const validPassword = process.env.ADMIN_PASSWORD;
 
-    console.log("Environment check - validUsername:", validUsername ? "set" : "not set", "validPassword:", validPassword ? "set" : "not set");
+    console.log(
+      "Environment check - validUsername:",
+      validUsername ? "set" : "not set",
+      "validPassword:",
+      validPassword ? "set" : "not set",
+    );
 
     if (!validUsername || !validPassword) {
       console.error(
