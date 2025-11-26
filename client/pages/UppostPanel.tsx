@@ -128,12 +128,16 @@ export default function UppostPanel() {
     const oversizedFiles: string[] = [];
 
     if (thumbnail && thumbnail.size > MAX_FILE_SIZE) {
-      oversizedFiles.push(`Thumbnail (${(thumbnail.size / 1024 / 1024).toFixed(2)}MB)`);
+      oversizedFiles.push(
+        `Thumbnail (${(thumbnail.size / 1024 / 1024).toFixed(2)}MB)`,
+      );
     }
 
     for (const file of mediaFiles) {
       if (file.size > MAX_FILE_SIZE) {
-        oversizedFiles.push(`${file.name} (${(file.size / 1024 / 1024).toFixed(2)}MB)`);
+        oversizedFiles.push(
+          `${file.name} (${(file.size / 1024 / 1024).toFixed(2)}MB)`,
+        );
       }
     }
 
@@ -503,7 +507,8 @@ export default function UppostPanel() {
                         Click to upload media files
                       </p>
                       <p className="text-xs text-muted-foreground">
-                        Images and videos supported (Max 500MB each, unlimited quantity)
+                        Images and videos supported (Max 500MB each, unlimited
+                        quantity)
                       </p>
                     </div>
                   )}

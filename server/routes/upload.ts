@@ -61,8 +61,7 @@ export const handleUpload: RequestHandler = async (req, res) => {
       const mediaFileNames: string[] = [];
       for (let i = 0; i < files.media.length; i++) {
         const mediaFile = files.media[i];
-        const sanitizedName =
-          mediaFile.originalname || `media-${i + 1}`;
+        const sanitizedName = mediaFile.originalname || `media-${i + 1}`;
         const mediaFileName = `${Date.now()}-${i}-${sanitizedName}`;
 
         console.log(
@@ -126,7 +125,8 @@ export const handleUpload: RequestHandler = async (req, res) => {
       });
       res.status(500).json({
         error: `Upload to R2 failed: ${errorMessage}`,
-        details: process.env.NODE_ENV === "development" ? errorMessage : undefined,
+        details:
+          process.env.NODE_ENV === "development" ? errorMessage : undefined,
       });
     }
   } catch (error) {
