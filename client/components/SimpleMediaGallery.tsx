@@ -11,6 +11,7 @@ interface SimpleMediaGalleryProps {
   mediaFiles: MediaFile[];
   postTitle: string;
   thumbnails?: { [key: string]: string };
+  thumbnailUrl?: string;
 }
 
 const getMediaIcon = (type: string): string => {
