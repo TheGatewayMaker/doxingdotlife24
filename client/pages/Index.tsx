@@ -574,7 +574,7 @@ export default function Index() {
                   <button
                     onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
                     disabled={currentPage === 1}
-                    className="px-3 sm:px-4 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-blue-800 disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-md hover:shadow-lg hover:shadow-blue-500/50 active:scale-95 text-sm sm:text-base"
+                    className="px-3 sm:px-4 py-2.5 bg-gray-700 text-white font-semibold rounded-lg hover:bg-gray-600 disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-md hover:shadow-lg hover:shadow-gray-900/50 active:scale-95 text-sm sm:text-base"
                   >
                     ← Prev
                   </button>
@@ -587,8 +587,8 @@ export default function Index() {
                           className={cn(
                             "w-8 h-8 sm:w-10 sm:h-10 rounded-lg font-semibold transition-all text-xs sm:text-sm shadow-sm hover:shadow-md",
                             currentPage === page
-                              ? "bg-gradient-to-r from-blue-600 to-blue-700 text-white"
-                              : "bg-slate-800 border border-slate-700 hover:border-blue-500/50 hover:bg-slate-700 text-gray-300",
+                              ? "bg-gray-700 text-white"
+                              : "bg-gray-800 border border-gray-700 hover:border-gray-600 hover:bg-gray-700 text-gray-400",
                           )}
                         >
                           {page}
@@ -601,7 +601,7 @@ export default function Index() {
                       setCurrentPage(Math.min(totalPages, currentPage + 1))
                     }
                     disabled={currentPage === totalPages}
-                    className="px-3 sm:px-4 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-blue-800 disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-md hover:shadow-lg hover:shadow-blue-500/50 active:scale-95 text-sm sm:text-base"
+                    className="px-3 sm:px-4 py-2.5 bg-gray-700 text-white font-semibold rounded-lg hover:bg-gray-600 disabled:opacity-40 disabled:cursor-not-allowed transition-all shadow-md hover:shadow-lg hover:shadow-gray-900/50 active:scale-95 text-sm sm:text-base"
                   >
                     Next →
                   </button>
