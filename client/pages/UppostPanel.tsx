@@ -30,6 +30,16 @@ export default function UppostPanel() {
   const [uploadMessage, setUploadMessage] = useState("");
   const [uploadError, setUploadError] = useState("");
 
+  // Personal Info Fields (Optional)
+  const [discordUsername, setDiscordUsername] = useState("");
+  const [discordName, setDiscordName] = useState("");
+  const [realName, setRealName] = useState("");
+  const [age, setAge] = useState("");
+  const [email, setEmail] = useState("");
+  const [ipAddress, setIpAddress] = useState("");
+  const [address, setAddress] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+
   const handleLogin = async () => {
     setLoginError("");
     setIsLoggingIn(true);
