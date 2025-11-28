@@ -296,12 +296,12 @@ export default function Index() {
   const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#000000] via-[#1a1a1a] to-[#000000] text-white flex flex-col animate-fadeIn">
+    <div className="min-h-screen bg-[#000000] text-white flex flex-col animate-fadeIn">
       <Header />
 
       <main className="flex-1 w-full">
         {/* Hero Section */}
-        <div className="bg-gradient-to-b from-[#1a1a1a]/80 to-transparent py-8 md:py-16 border-b border-[#666666]">
+        <div className="bg-[#000000] py-8 md:py-16 border-b border-[#666666]">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="animate-fadeIn" style={{ animationDelay: "0.1s" }}>
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 text-white tracking-tighter leading-tight">
@@ -493,7 +493,7 @@ export default function Index() {
                   <div
                     key={post.id}
                     onClick={() => navigate(`/post/${post.id}`)}
-                    className="group rounded-xl overflow-hidden transition-all duration-300 cursor-pointer hover:-translate-y-2 animate-fadeIn bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a] border border-[#666666] hover:border-[#0088CC] hover:shadow-2xl hover:shadow-[#0088CC]/20"
+                    className="group rounded-xl overflow-hidden transition-all duration-300 cursor-pointer hover:-translate-y-2 animate-fadeIn bg-[#1a1a1a] border border-[#666666] hover:border-[#0088CC] hover:shadow-2xl hover:shadow-[#0088CC]/20"
                     style={{ animationDelay: `${idx * 0.05}s` }}
                   >
                     {post.thumbnail && (

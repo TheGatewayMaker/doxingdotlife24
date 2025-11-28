@@ -23,7 +23,7 @@ export default function Header() {
   };
 
   return (
-    <header className="w-full bg-gradient-to-r from-[#000000] to-[#1a1a1a] backdrop-blur-md border-b border-[#666666] shadow-lg animate-fadeIn sticky top-0 z-40">
+    <header className="w-full bg-[#000000] backdrop-blur-md border-b border-[#666666] shadow-lg animate-fadeIn sticky top-0 z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         <Link
           to="/"
@@ -116,7 +116,7 @@ export default function Header() {
             />
 
             {/* Sidebar */}
-            <div className="fixed left-0 top-16 bottom-0 w-64 sm:w-72 bg-gradient-to-b from-[#1a1a1a] to-[#000000] border-r border-[#666666] lg:hidden z-40 animate-slideInLeft shadow-2xl flex flex-col">
+            <div className="fixed left-0 top-16 bottom-0 w-64 sm:w-72 bg-[#000000] border-r border-[#666666] lg:hidden z-40 animate-slideInLeft shadow-2xl flex flex-col">
               <nav className="p-4 space-y-2 overflow-y-auto flex-1">
                 <Link
                   to="/"
