@@ -389,7 +389,7 @@ export default function AllPosts() {
                 {/* Server Dropdown */}
                 <div className="relative group">
                   <label className="text-sm font-bold text-white block mb-3 flex items-center gap-2">
-                    <ServerIcon className="w-4 h-4 text-blue-400" />
+                    <ServerIcon className="w-4 h-4 text-[#0088CC]" />
                     By Server
                   </label>
                   <div className="relative">
