@@ -14,9 +14,9 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-slate-900 border-t border-slate-700 mt-12 shadow-md animate-fadeIn">
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+    <footer className="w-full bg-gradient-to-t from-slate-950 to-slate-900 border-t border-blue-500/20 mt-16 shadow-lg animate-fadeIn">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-8">
           <div className="animate-fadeIn" style={{ animationDelay: "0.1s" }}>
             <div className="flex items-center gap-3 mb-3">
               <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 shadow-md">
