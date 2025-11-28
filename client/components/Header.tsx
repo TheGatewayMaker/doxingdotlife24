@@ -31,7 +31,7 @@ export default function Header() {
         >
           <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden shadow-md flex-shrink-0">
             <img
-              src="https://i.ibb.co/rG8yDddq/doxingdotlifelogogeniune888175141.png"
+              src="https://i.ibb.co/PzNWvp7N/doxinglifelogo.png"
               alt="Doxing Dot Life Logo"
               className="w-full h-full object-cover"
             />

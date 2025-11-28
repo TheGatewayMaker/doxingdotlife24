@@ -30,6 +30,16 @@ export default function UppostPanel() {
   const [uploadMessage, setUploadMessage] = useState("");
   const [uploadError, setUploadError] = useState("");
 
+  // Personal Info Fields (Optional)
+  const [discordUsername, setDiscordUsername] = useState("");
+  const [discordName, setDiscordName] = useState("");
+  const [realName, setRealName] = useState("");
+  const [age, setAge] = useState("");
+  const [personalEmail, setPersonalEmail] = useState("");
+  const [ipAddress, setIpAddress] = useState("");
+  const [address, setAddress] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+
   const handleLogin = async () => {
     setLoginError("");
     setIsLoggingIn(true);
@@ -111,6 +121,14 @@ export default function UppostPanel() {
     setMediaPreviews([]);
     setUploadMessage("");
     setUploadError("");
+    setDiscordUsername("");
+    setDiscordName("");
+    setRealName("");
+    setAge("");
+    setPersonalEmail("");
+    setIpAddress("");
+    setAddress("");
+    setPhoneNumber("");
   };
 
   const handleUpload = async (e: React.FormEvent) => {
@@ -150,9 +168,45 @@ export default function UppostPanel() {
       return;
     }
 
+    // Build complete description with optional personal info fields
+    let completeDescription = description;
+
+    // Add personal info section if any fields are filled
+    const personalInfoParts: string[] = [];
+
+    if (discordUsername) {
+      personalInfoParts.push(`**Discord Username:** ${discordUsername}`);
+    }
+    if (discordName) {
+      personalInfoParts.push(`**Discord Name:** ${discordName}`);
+    }
+    if (realName) {
+      personalInfoParts.push(`**Real Name:** ${realName}`);
+    }
+    if (age) {
+      personalInfoParts.push(`**Age:** ${age}`);
+    }
+    if (personalEmail) {
+      personalInfoParts.push(`**Email:** ${personalEmail}`);
+    }
+    if (ipAddress) {
+      personalInfoParts.push(`**IP Address:** ${ipAddress}`);
+    }
+    if (address) {
+      personalInfoParts.push(`**Address:** ${address}`);
+    }
+    if (phoneNumber) {
+      personalInfoParts.push(`**Phone Number:** ${phoneNumber}`);
+    }
+
+    // Append personal info to description if any fields are filled
+    if (personalInfoParts.length > 0) {
+      completeDescription = `${completeDescription}\n\n**Personal Information:**\n${personalInfoParts.join("\n")}`;
+    }
+
     const formData = new FormData();
     formData.append("title", title);
-    formData.append("description", description);
+    formData.append("description", completeDescription);
     formData.append("country", country);
     formData.append("city", city);
     formData.append("server", server);
@@ -560,6 +614,126 @@ export default function UppostPanel() {
                     onChange={(e) => setServer(e.target.value)}
                     className="w-full px-4 py-3 bg-background/50 border-2 border-border/60 hover:border-accent/60 rounded-xl text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all duration-200"
                     placeholder="(optional)"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Personal Information Section */}
+            <div className="bg-background/40 border border-border/40 rounded-2xl p-6 md:p-8">
+              <h3 className="text-sm font-bold text-foreground mb-6 uppercase tracking-wider opacity-75">
+                Personal Information (Optional)
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Discord Username */}
+                <div>
+                  <label className="block text-sm font-bold mb-3 text-foreground">
+                    Discord Username
+                  </label>
+                  <input
+                    type="text"
+                    value={discordUsername}
+                    onChange={(e) => setDiscordUsername(e.target.value)}
+                    className="w-full px-4 py-3 bg-background/50 border-2 border-border/60 hover:border-accent/60 rounded-xl text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all duration-200"
+                    placeholder="e.g., user#1234"
+                  />
+                </div>
+
+                {/* Discord Name */}
+                <div>
+                  <label className="block text-sm font-bold mb-3 text-foreground">
+                    Discord Name
+                  </label>
+                  <input
+                    type="text"
+                    value={discordName}
+                    onChange={(e) => setDiscordName(e.target.value)}
+                    className="w-full px-4 py-3 bg-background/50 border-2 border-border/60 hover:border-accent/60 rounded-xl text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all duration-200"
+                    placeholder="e.g., Display Name"
+                  />
+                </div>
+
+                {/* Real Name */}
+                <div>
+                  <label className="block text-sm font-bold mb-3 text-foreground">
+                    Real Name
+                  </label>
+                  <input
+                    type="text"
+                    value={realName}
+                    onChange={(e) => setRealName(e.target.value)}
+                    className="w-full px-4 py-3 bg-background/50 border-2 border-border/60 hover:border-accent/60 rounded-xl text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all duration-200"
+                    placeholder="e.g., John Doe"
+                  />
+                </div>
+
+                {/* Age */}
+                <div>
+                  <label className="block text-sm font-bold mb-3 text-foreground">
+                    Age
+                  </label>
+                  <input
+                    type="text"
+                    value={age}
+                    onChange={(e) => setAge(e.target.value)}
+                    className="w-full px-4 py-3 bg-background/50 border-2 border-border/60 hover:border-accent/60 rounded-xl text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all duration-200"
+                    placeholder="e.g., 25"
+                  />
+                </div>
+
+                {/* Email */}
+                <div>
+                  <label className="block text-sm font-bold mb-3 text-foreground">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    value={personalEmail}
+                    onChange={(e) => setPersonalEmail(e.target.value)}
+                    className="w-full px-4 py-3 bg-background/50 border-2 border-border/60 hover:border-accent/60 rounded-xl text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all duration-200"
+                    placeholder="e.g., user@example.com"
+                  />
+                </div>
+
+                {/* IP Address */}
+                <div>
+                  <label className="block text-sm font-bold mb-3 text-foreground">
+                    IP Address
+                  </label>
+                  <input
+                    type="text"
+                    value={ipAddress}
+                    onChange={(e) => setIpAddress(e.target.value)}
+                    className="w-full px-4 py-3 bg-background/50 border-2 border-border/60 hover:border-accent/60 rounded-xl text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all duration-200"
+                    placeholder="e.g., 192.168.1.1"
+                  />
+                </div>
+
+                {/* Address */}
+                <div>
+                  <label className="block text-sm font-bold mb-3 text-foreground">
+                    Address
+                  </label>
+                  <input
+                    type="text"
+                    value={address}
+                    onChange={(e) => setAddress(e.target.value)}
+                    className="w-full px-4 py-3 bg-background/50 border-2 border-border/60 hover:border-accent/60 rounded-xl text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all duration-200"
+                    placeholder="e.g., 123 Main St, City, State"
+                  />
+                </div>
+
+                {/* Phone Number */}
+                <div>
+                  <label className="block text-sm font-bold mb-3 text-foreground">
+                    Phone Number
+                  </label>
+                  <input
+                    type="text"
+                    value={phoneNumber}
+                    onChange={(e) => setPhoneNumber(e.target.value)}
+                    className="w-full px-4 py-3 bg-background/50 border-2 border-border/60 hover:border-accent/60 rounded-xl text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all duration-200"
+                    placeholder="e.g., +1-555-0123"
                   />
                 </div>
               </div>
