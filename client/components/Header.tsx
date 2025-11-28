@@ -23,7 +23,7 @@ export default function Header() {
   };
 
   return (
-    <header className="w-full bg-gradient-to-r from-[#000000] to-[#1a1a1a] backdrop-blur-md border-b border-[#666666] shadow-lg animate-fadeIn sticky top-0 z-40">
+    <header className="w-full bg-[#000000] backdrop-blur-md border-b border-[#666666] shadow-lg animate-fadeIn sticky top-0 z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         <Link
           to="/"
